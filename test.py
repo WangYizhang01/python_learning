@@ -524,8 +524,8 @@
 # print(random.getrandbits(1))
 # print(random.randrange(1))
 
-i = 10431
-sum = 0
-for j in str(i):
-    sum += int(j)
-print(sum)
+# i = 10431
+# sum = 0
+# for j in str(i):
+#     sum += int(j)
+# print(sum)
