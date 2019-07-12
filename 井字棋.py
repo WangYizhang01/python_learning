@@ -1,5 +1,3 @@
-# coding: utf-8
-
 class JingZiQi:
     """模拟井字棋的类"""
     def __init__(self):
@@ -32,7 +30,7 @@ class JingZiQi:
                 mark == board[0][2] ==board[1][1] == board[2][0])
 
     def winner(self):
-        for mark in"XO":
+        for mark in "XO":
             if self._is_win(mark):
                 return mark
         return None
