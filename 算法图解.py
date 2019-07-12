@@ -52,10 +52,32 @@
 #
 # count(10)
 
-def count(n):
-    print(n)
-    while n >= 0:
-        count(n-1)
+# def count(n):
+#     print(n)
+#     while n >= 0:
+#         count(n-1)
+#
+# count(2)
 
+# # 递归实现列表求和
+# def sum(list_1):
+#     if len(list_1) == 0:
+#         return 0
+#     # if len(list_1) == 1:
+#     #     return list_1[0]
+#     return list_1[0] + sum(list_1[1:])
+#
+# l = [1,2,3,4,5,6,7,8,9]
+# print(sum(l))
 
-count(2)
+# 递归实现快速排序
+def quicksort(array):
+    if len(array) < 2:
+        return array
+    else:
+        pivot = array[0]
+        less = [i for i in array[1:] if i <= pivot]
+        greater = [i for i in array[1:] if i > pivot]
+        return quicksort(less) + [pivot] + quicksort(greater)
+
+print(quicksort([10,5,2,3]))
