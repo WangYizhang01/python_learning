@@ -529,3 +529,38 @@
 # for j in str(i):
 #     sum += int(j)
 # print(sum)
+
+
+# random库的使用
+import random
+
+# # 基本随机数函数
+# random.seed(10) #设置随机数的种子
+# random.random() #产生0,1之间的随机数
+#
+# # 扩展随机数函数
+# random.randint(10,100) # 产生10,100之间的随机整数
+# random.randrange(10,100,10) # 产生10,100之间以10为步长的整数
+# random.getrandbits(16) # 生成一个16比特长的随机整数
+# random.uniform(10,100) # 生成10,100之间的随机小数
+# # 从序列seq中随机选择一个元素
+# seq = list(range(1,10))
+# random.choice(seq)
+# # 将序列seq中元素随机排列，返回打乱后的序列
+# s = random.shuffle(seq)
+# print(s)
+
+# # 蒙特卡洛方法求圆周率
+# from random import random
+# from time import perf_counter
+#
+# num = 1000*1000
+# count = 0
+# start = perf_counter()
+# for time in range(num):
+#     x,y = random(),random()
+#     if pow(x**2 + y**2,0.5) < 1:
+#         count += 1
+# pi = 4 * count / num
+# print(pi)
+# print(perf_counter()-start)
