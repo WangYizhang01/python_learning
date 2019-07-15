@@ -564,3 +564,29 @@ import random
 # pi = 4 * count / num
 # print(pi)
 # print(perf_counter()-start)
+
+
+# arr = [3,5,2,8,6]
+# arr.sort()
+# print(arr)
+
+
+# 数组排序
+# class Solution:
+#     def relativeSortArray(self, arr1, arr2):
+#         self.arr1 = arr1
+#         self.arr2 = arr2
+#         self.arr3 = []
+#         for i in self.arr1:
+#             if i in self.arr2:
+#                 pass
+#             else:
+#                 self.arr3.append(i)
+#                 self.arr1.remove(i)
+#         self.arr3.sort()
+#         self.arr1 += self.arr3
+#         print(self.arr1)
+# a = [2,3,1,3,2,4,6,7,9,2,19]
+# b = [2,1,4,3,9,6]
+# solution = Solution()
+# solution.relativeSortArray(a,b)
