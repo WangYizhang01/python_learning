@@ -590,3 +590,143 @@ import random
 # b = [2,1,4,3,9,6]
 # solution = Solution()
 # solution.relativeSortArray(a,b)
+
+
+# class Solution:
+#     def defangIPaddr(self,address):
+#         self.address = address
+#         for c in self.address:
+#             if c == '.':
+#                 c = '[.]'
+#         print(self.address)
+#
+# solution = Solution()
+# solution.defangIPaddr('1.1.1.1.1')
+
+# address = '1.1.1.1'
+# print(address.replace('.','[.]'))
+# # a = []
+# # for c in address:
+# #     a.append(c)
+# #     # if c == '.':
+# #     #     c = '[.]'
+# print(address)
+
+
+# class Solution:
+#     def backspaceCompare(self, S: str, T: str) -> bool:
+#         a = [];b = []
+#         for i in S:
+#             a.append(i)
+#         for j in T:
+#             b.append(j)
+#
+#         while '#' in a:
+#             n = a.index('#')
+#             if n == 0:
+#                 del a[n]
+#             del a[n],a[n-1]
+#         while '#' in b:
+#             n = b.index('#')
+#             if n == 0:
+#                 del b[n]
+#             del b[n],b[n - 1]
+#
+#         if a == b:
+#             return True
+#         return False
+#
+# sol = Solution()
+# print(sol.backspaceCompare("a##c","#a#c"))
+
+
+# n = '00000000000000000000000000001011'
+# n = str(n)
+# count = 0
+# for i in n:
+#     if i == '1':
+#         count += 1
+# print(count)
+
+# a = 'hello'
+# b = [];c = [];d = []
+# for i in a:
+#     b.append(i)
+# for i in range(len(b)):
+#     if b[i] in 'aeiou':
+#         c.append(i)
+#         d.append(b[i])
+# d.reverse()
+# for i in range(len(c)):
+#     b[c[i]] = d[i]
+# print(''.join(b))
+
+
+# class Solution(object):
+#     def countSegments(self, s):
+#         """
+#         :type s: str
+#         :rtype: int
+#         """
+#         if s == '':
+#             return 0
+#         a = s.split(' ')
+#         while '' in a:
+#             a.remove('')
+#         return len(a)
+#
+# sol = Solution()
+# print(sol.countSegments('          '))
+
+
+# class Solution(object):
+#     def findOcurrences(self, text, first, second):
+#         """
+#         :type text: str
+#         :type first: str
+#         :type second: str
+#         :rtype: List[str]
+#         """
+#         a = text.split(' ')
+#         b = []
+#         while first in a and a[a.index(first)+1] == second:
+#             b.append(a[a.index(first)+2])
+#             del a[a.index(first)+1]
+#             a.remove(first)
+#         return b
+#
+# sol = Solution()
+# print(sol.findOcurrences("jkypmsxd jkypmsxd kcyxdfnoa jkypmsxd kcyxdfnoa jkypmsxd kcyxdfnoa kcyxdfnoa jkypmsxd kcyxdfnoa","kcyxdfnoa","jkypmsxd"))
+
+
+# counter = 1
+# def doLotsOfStuff():
+#     global counter
+#     for i in (1, 2, 3):
+#         counter += 1
+# doLotsOfStuff()
+# print(counter)
+
+# import copy
+#
+# a = [1, 2, 3, 4, ['a', 'b']]
+# b = a
+# c = copy.copy(a)
+# d = copy.deepcopy(a)
+# a.append(5)
+# a[4].append('c')
+# print(a)
+# print(b)
+# print(c)
+# print(d)
+
+# foo = [1,2]
+# foo1 = foo
+# foo.append(3)
+# print(foo,foo1)
+
+# print(r"\nwoow")
+# for i in range(6):
+#     print(i,end=' ')
+# print('\n',len('asfdgh'))
+
