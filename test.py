@@ -730,3 +730,62 @@ import random
 #     print(i,end=' ')
 # print('\n',len('asfdgh'))
 
+# # 字符串索引
+# a = '13.18f'
+# print(a[1])
+
+# #TempConvert.py
+# TempStr = input("请输入带有符号的温度值: ")
+# if TempStr[-1] in ['F', 'f']:
+#     C = (TempStr[0:-1] - 32)/1.8
+#     print("转换后的温度是{:.2f}C".format(C))
+# elif TempStr[-1] in ['C', 'c']:
+#     F = 1.8*eval(TempStr[0:-1]) + 32
+#     print("转换后的温度是{:.2f}F".format(F))
+# else:
+#     print("输入格式错误")
+
+# print(ord('A'))
+
+# # 把列表当作队列使用
+# from collections import deque
+#
+# queue = deque(['fafg','yrhc','uixdjg'])
+# queue.append('bchr')
+# queue.popleft()
+# print(queue)
+
+print([['']*3 for j in range(4)])
+print([['']*3]*4)
+
+# # 转置矩阵
+# matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
+# matrix_zhuanzhi = [[row[i] for row in matrix] for i in range(4)]
+# matrix_zhuanzhi2 = []
+# for i in range(4):
+#     matrix_zhuanzhi2.append([row[i] for row in matrix])
+# # for i in range(4):# 有问题
+# #     for row in matrix:
+# #         matrix_zhuanzhi2.append(row[i])
+# print(matrix_zhuanzhi)
+# print(matrix_zhuanzhi2)
+
+# a = dict(sape=4139, guido=4127, jack=4098)
+# print(a)
+# for i in a.keys():
+#     print(type(i))
+
+basket = ['apple', 'orange', 'apple', 'pear', 'orange', 'banana']
+for i,v in enumerate(basket):
+    print(i,v)
+print(sorted(basket))
+print(basket)
+basket.sort()
+print(basket)
+
+import sys
+
+print('命令行参数如下:')
+for i in sys.argv:
+    print(i)
+print('\n\nPython 路径为：', sys.path, '\n')
