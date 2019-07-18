@@ -755,8 +755,8 @@ import random
 # queue.popleft()
 # print(queue)
 
-print([['']*3 for j in range(4)])
-print([['']*3]*4)
+# print([['']*3 for j in range(4)])
+# print([['']*3]*4)
 
 # # 转置矩阵
 # matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
@@ -775,17 +775,165 @@ print([['']*3]*4)
 # for i in a.keys():
 #     print(type(i))
 
-basket = ['apple', 'orange', 'apple', 'pear', 'orange', 'banana']
-for i,v in enumerate(basket):
-    print(i,v)
-print(sorted(basket))
-print(basket)
-basket.sort()
-print(basket)
+# basket = ['apple', 'orange', 'apple', 'pear', 'orange', 'banana']
+# for i,v in enumerate(basket):
+#     print(i,v)
+# print(sorted(basket))
+# print(basket)
+# basket.sort()
+# print(basket)
+#
+# import sys
+#
+# print('命令行参数如下:')
+# for i in sys.argv:
+#     print(i)
+# print('\n\nPython 路径为：', sys.path, '\n')
 
-import sys
 
-print('命令行参数如下:')
-for i in sys.argv:
-    print(i)
-print('\n\nPython 路径为：', sys.path, '\n')
+# a = []
+# def list_append():
+#     for i in range(10):
+#         a.append(i)
+#     return a
+#
+# print(list_append())
+
+# f = lambda x,y:x+y
+# print(f(3,8))
+
+# # 绘制七段数码管
+# #SevenDigitsDrawV1.py
+# import turtle
+#
+# def drawLine(draw):   #绘制单段数码管
+#     turtle.pendown() if draw else turtle.penup()
+#     turtle.fd(40)
+#     turtle.right(90)
+#
+# def drawDigit(digit): #根据数字绘制七段数码管
+#     drawLine(True) if digit in [2,3,4,5,6,8,9] else drawLine(False)
+#     drawLine(True) if digit in [0,1,3,4,5,6,7,8,9] else drawLine(False)
+#     drawLine(True) if digit in [0,2,3,5,6,8,9] else drawLine(False)
+#     drawLine(True) if digit in [0,2,6,8] else drawLine(False)
+#     turtle.left(90)
+#     drawLine(True) if digit in [0,4,5,6,8,9] else drawLine(False)
+#     drawLine(True) if digit in [0,2,3,5,6,7,8,9] else drawLine(False)
+#     drawLine(True) if digit in [0,1,2,3,4,7,8,9] else drawLine(False)
+#     turtle.left(180)
+#     turtle.penup()
+#     turtle.fd(20)
+#
+# def drawDate(date):  #获得要输出的数字
+#     for i in date:
+#         drawDigit(eval(i))  #通过eval()函数将数字变为整数
+#
+# def main():
+#     turtle.setup(800, 350, 200, 200)
+#     turtle.penup()
+#     turtle.fd(-300)
+#     turtle.pensize(5)
+#     drawDate('20190718')
+#     turtle.hideturtle()
+#     turtle.done()
+#
+# main()
+
+
+# 绘制漂亮的七段数码管
+#SevenDigitsDrawV2.py
+import turtle,time
+
+def drawGap(): #绘制数码管间隔
+    turtle.penup()
+    turtle.fd(5)
+
+def drawLine(draw):   #绘制单段数码管
+    drawGap()
+    turtle.pendown() if draw else turtle.penup()
+    turtle.fd(40)
+    drawGap()
+    turtle.right(90)
+
+def drawDigit(d): #根据数字绘制七段数码管
+    drawLine(True) if d in [2,3,4,5,6,8,9] else drawLine(False)
+    drawLine(True) if d in [0,1,3,4,5,6,7,8,9] else drawLine(False)
+    drawLine(True) if d in [0,2,3,5,6,8,9] else drawLine(False)
+    drawLine(True) if d in [0,2,6,8] else drawLine(False)
+    turtle.left(90)
+    drawLine(True) if d in [0,4,5,6,8,9] else drawLine(False)
+    drawLine(True) if d in [0,2,3,5,6,7,8,9] else drawLine(False)
+    drawLine(True) if d in [0,1,2,3,4,7,8,9] else drawLine(False)
+    turtle.left(180)
+    turtle.penup()
+    turtle.fd(20)
+
+def drawDate(date):
+    turtle.pencolor("red")
+    for i in date:
+        if i == '-':
+            turtle.write('年',font=("Arial", 18, "normal"))
+            turtle.pencolor("green")
+            turtle.fd(40)
+        elif i == '=':
+            turtle.write('月',font=("Arial", 18, "normal"))
+            turtle.pencolor("blue")
+            turtle.fd(40)
+        elif i == '+':
+            turtle.write('日',font=("Arial", 18, "normal"))
+        else:
+            drawDigit(eval(i))
+
+def main():
+    turtle.setup(800, 350, 200, 200)
+    turtle.penup()
+    turtle.fd(-350)
+    turtle.pensize(5)
+#    drawDate('2018-10=10+')
+    drawDate(time.strftime('%Y-%m=%d+',time.gmtime()))
+    turtle.hideturtle()
+    turtle.done()
+
+main()
+
+
+# # 递归
+# def fact(n):
+#     if n == 0:
+#         return 1
+#     return n*fact(n-1)
+#
+# print(fact(5))
+
+# 字符串反转
+# s = 'abcdefghijk'
+# print(s[::-1])
+def rvs(s):
+    if s == '':
+        return s
+    else:
+        return rvs(s[1:]) + s[0]
+
+# 斐波那契数列
+def fib(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return fib(n-1) + fib(n-2)
+
+# 汉诺塔问题
+count = 0
+
+def hanoi(n,src,dst,mid):
+    global count
+    if n == 1:
+        print("{}:{}->{}".format(1,src,dst))
+        count += 1
+    else:
+        hanoi(n-1,src,mid,dst)
+        print("{}:{}->{}".format(n,src, dst))
+        count += 1
+        hanoi(n-1,mid,dst,src)
+
+hanoi(10,"A","C","B")
+print(count)
