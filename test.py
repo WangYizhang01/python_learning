@@ -840,100 +840,122 @@ import random
 # main()
 
 
-# 绘制漂亮的七段数码管
-#SevenDigitsDrawV2.py
-import turtle,time
-
-def drawGap(): #绘制数码管间隔
-    turtle.penup()
-    turtle.fd(5)
-
-def drawLine(draw):   #绘制单段数码管
-    drawGap()
-    turtle.pendown() if draw else turtle.penup()
-    turtle.fd(40)
-    drawGap()
-    turtle.right(90)
-
-def drawDigit(d): #根据数字绘制七段数码管
-    drawLine(True) if d in [2,3,4,5,6,8,9] else drawLine(False)
-    drawLine(True) if d in [0,1,3,4,5,6,7,8,9] else drawLine(False)
-    drawLine(True) if d in [0,2,3,5,6,8,9] else drawLine(False)
-    drawLine(True) if d in [0,2,6,8] else drawLine(False)
-    turtle.left(90)
-    drawLine(True) if d in [0,4,5,6,8,9] else drawLine(False)
-    drawLine(True) if d in [0,2,3,5,6,7,8,9] else drawLine(False)
-    drawLine(True) if d in [0,1,2,3,4,7,8,9] else drawLine(False)
-    turtle.left(180)
-    turtle.penup()
-    turtle.fd(20)
-
-def drawDate(date):
-    turtle.pencolor("red")
-    for i in date:
-        if i == '-':
-            turtle.write('年',font=("Arial", 18, "normal"))
-            turtle.pencolor("green")
-            turtle.fd(40)
-        elif i == '=':
-            turtle.write('月',font=("Arial", 18, "normal"))
-            turtle.pencolor("blue")
-            turtle.fd(40)
-        elif i == '+':
-            turtle.write('日',font=("Arial", 18, "normal"))
-        else:
-            drawDigit(eval(i))
-
-def main():
-    turtle.setup(800, 350, 200, 200)
-    turtle.penup()
-    turtle.fd(-350)
-    turtle.pensize(5)
-#    drawDate('2018-10=10+')
-    drawDate(time.strftime('%Y-%m=%d+',time.gmtime()))
-    turtle.hideturtle()
-    turtle.done()
-
-main()
-
-
-# # 递归
-# def fact(n):
-#     if n == 0:
-#         return 1
-#     return n*fact(n-1)
+# # 绘制漂亮的七段数码管
+# #SevenDigitsDrawV2.py
+# import turtle,time
 #
-# print(fact(5))
+# def drawGap(): #绘制数码管间隔
+#     turtle.penup()
+#     turtle.fd(5)
+#
+# def drawLine(draw):   #绘制单段数码管
+#     drawGap()
+#     turtle.pendown() if draw else turtle.penup()
+#     turtle.fd(40)
+#     drawGap()
+#     turtle.right(90)
+#
+# def drawDigit(d): #根据数字绘制七段数码管
+#     drawLine(True) if d in [2,3,4,5,6,8,9] else drawLine(False)
+#     drawLine(True) if d in [0,1,3,4,5,6,7,8,9] else drawLine(False)
+#     drawLine(True) if d in [0,2,3,5,6,8,9] else drawLine(False)
+#     drawLine(True) if d in [0,2,6,8] else drawLine(False)
+#     turtle.left(90)
+#     drawLine(True) if d in [0,4,5,6,8,9] else drawLine(False)
+#     drawLine(True) if d in [0,2,3,5,6,7,8,9] else drawLine(False)
+#     drawLine(True) if d in [0,1,2,3,4,7,8,9] else drawLine(False)
+#     turtle.left(180)
+#     turtle.penup()
+#     turtle.fd(20)
+#
+# def drawDate(date):
+#     turtle.pencolor("red")
+#     for i in date:
+#         if i == '-':
+#             turtle.write('年',font=("Arial", 18, "normal"))
+#             turtle.pencolor("green")
+#             turtle.fd(40)
+#         elif i == '=':
+#             turtle.write('月',font=("Arial", 18, "normal"))
+#             turtle.pencolor("blue")
+#             turtle.fd(40)
+#         elif i == '+':
+#             turtle.write('日',font=("Arial", 18, "normal"))
+#         else:
+#             drawDigit(eval(i))
+#
+# def main():
+#     turtle.setup(800, 350, 200, 200)
+#     turtle.penup()
+#     turtle.fd(-350)
+#     turtle.pensize(5)
+# #    drawDate('2018-10=10+')
+#     drawDate(time.strftime('%Y-%m=%d+',time.gmtime()))
+#     turtle.hideturtle()
+#     turtle.done()
+#
+# main()
 
-# 字符串反转
-# s = 'abcdefghijk'
-# print(s[::-1])
-def rvs(s):
-    if s == '':
-        return s
-    else:
-        return rvs(s[1:]) + s[0]
 
-# 斐波那契数列
-def fib(n):
-    if n == 0 or n == 1:
-        return 1
-    else:
-        return fib(n-1) + fib(n-2)
+# import random
+#
+# def genpwd(length):
+#     return random.randint(10**(length-1),10**length-1)
+#
+# length = 3
+# random.seed(17)
+# for i in range(3):
+#     print(genpwd(length))
 
-# 汉诺塔问题
-count = 0
+# ls = ['fs','gdh',523,'fai']
+# ls = tuple(ls)
+# print(ls)
 
-def hanoi(n,src,dst,mid):
-    global count
-    if n == 1:
-        print("{}:{}->{}".format(1,src,dst))
-        count += 1
-    else:
-        hanoi(n-1,src,mid,dst)
-        print("{}:{}->{}".format(n,src, dst))
-        count += 1
-        hanoi(n-1,mid,dst,src)
+# # 基本统计值计算
+# def getNum():# 获取用户不定长度的输入
+#     nums = []
+#     iNumStr = input("请输入数字（回车退出）： ")
+#     while iNumStr != '':
+#         nums.append(eval(iNumStr))
+#         iNumStr = input("请输入数字（回车退出）： ")
+#     return nums
+#
+# def mean(numbers):# 计算平均值
+#     sum = 0.0
+#     for i in numbers:
+#         sum += i
+#     return sum/len(numbers)
+#
+# def dev(numbers,mean):# 计算方差
+#     sdev = 0.0
+#     for num in numbers:
+#         sdev += (num-mean)**2
+#     return pow(sdev/(len(numbers)-1),0.5)
+#
+# def median(numbers):# 计算中位数
+#     sorted(numbers)
+#     if len(numbers) % 2 == 0:
+#         return (numbers[int(len(numbers)/2) - 1] + numbers[int(len(numbers)/2)]) / 2
+#     else:
+#         return numbers[int(len(numbers)/2)]
 
-hanoi(10,"A","C","B")
-print(count)
+
+# # 字典(映射)
+# d = {"中国":"北京","美国":"华盛顿","英国":"伦敦","法国":"巴黎"}
+#
+# print(d.get("中国","伊斯兰堡"))
+# print(d.get("巴基斯坦","伊斯兰堡"))
+# print(d.popitem())
+
+
+# # jieba库
+# import jieba
+#
+# print(jieba.lcut("中国是一个伟大的国家"))
+# print(jieba.lcut("中国是一个伟大的国家",cut_all = True))
+# print(jieba.lcut_for_search("中华人民共和国是伟大的"))
+# jieba.add_word("蟒蛇语言")
+
+# d= {'a': 1, 'b': 2, 'b': '3'}
+# print(d['b'])
+
