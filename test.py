@@ -959,3 +959,325 @@ import random
 # d= {'a': 1, 'b': 2, 'b': '3'}
 # print(d['b'])
 
+# S = 'abcde'
+# # print(list(enumerate(S,start=1)))
+# for i,char in enumerate(S,start=1):
+#     print(i,char)
+
+# def mean(nums):
+#     return float(sum(nums)/len(nums))
+#
+# def findMaxAverage(nums,k):
+#     mean_max = 0
+#     for i in range(0,len(nums) - k + 1):
+#         if mean(nums[i:(i+k-1)]) >= mean_max:
+#             mean_max = mean(nums[i:(i+k-1)])
+#     print(mean_max)
+#
+# findMaxAverage([1,12,-5,-6,50,3],4)
+
+# def findMaxAverage(nums,k):
+#     mean_max = 0
+#     for i in range(len(nums) - k + 1):
+#         sum = 0
+#         for j in range(i, i + k - 1):
+#             sum += nums[j]
+#         mean = sum / k
+#         if mean >= mean_max:
+#             mean_max = mean
+#     return mean_max
+#
+# print(findMaxAverage([1,12,-5,-6,50,3],4))
+
+# def duplicateZeros(arr):
+#     """
+#     Do not return anything, modify arr in-place instead.
+#     """
+#     n = len(arr)
+#     for i in range(len(arr) - 1, 0, -1):
+#         if arr[i] == 0:
+#             arr.insert(i, 0)
+#     arr = arr[:n]
+#     return arr
+#
+# print(duplicateZeros([1,0,2,3,0,4,5,0]))
+
+# for i in range(9,-1,-1):
+#     print(i)
+
+
+# # 迭代器
+# list = [1,2,3,4]
+# it = iter(list)
+# print(next(it))
+# print(next(it))
+
+# list = [1,2,3,4]
+# it = iter(list)
+# for x in it:
+#     print(x,end=' ')
+
+# # 也可使用next函数
+# import sys
+#
+# list = [1,2,3,4]
+# it = iter(list)
+#
+# while True:
+#     try:
+#         print(next(it))
+#     except StopIteration:
+#         sys.exit()
+
+# # 创建一个迭代器
+# class MyNumbers:
+#     def __iter__(self):
+#         self.a = 1
+#         return self
+#
+#     def __next__(self):
+#         x = self.a
+#         self.a += 1
+#         return x
+#
+#
+# myclass = MyNumbers()
+# myiter = iter(myclass)
+#
+# print(next(myiter))
+# print(next(myiter))
+# print(next(myiter))
+# print(next(myiter))
+# print(next(myiter))
+
+
+# # 生成器实现斐波那契数列
+# import sys
+#
+#
+# def fibonacci(n):  # 生成器函数 - 斐波那契
+#     a,b,counter = 0,1,0
+#     while True:
+#         if (counter > n):
+#             return
+#         yield a
+#         a, b = b, a + b
+#         counter += 1
+#
+#
+# f = fibonacci(10)  # f 是一个迭代器，由生成器返回生成
+#
+# while True:
+#     try:
+#         print(next(f), end=" ")
+#     except StopIteration:
+#         sys.exit()
+
+
+# # 矩阵的转置
+# matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
+#
+# # (1)
+# print([row[i] for row in matrix for i in range(len(matrix[0]))])
+#
+# # (2)
+# transposed = []
+# for i in range(len(matrix[0])):
+#     transposed.append(row[i] for row in matrix)
+#
+# print(matrix)
+# print(transposed)
+#
+# #(3)
+# transposed = []
+# for i in range(len(matrix[0])):
+#     transposed_row = []
+#     for row in matrix:
+#         transposed_row.append(row[i])
+#     transposed.append(transposed_row)
+#
+# print(matrix)
+# print(transposed)
+
+
+# # 集合的操作
+# a = set('abrsjsgabjsh')
+# b = set('yshysfhc')
+# print(a,b)
+# print(a | b)
+# print(a & b)
+# print(a ^ b)
+
+
+# import numpy
+#
+# # 打印模块中定义的所有名称
+# print(dir(numpy))
+
+
+# # 文件的读写
+# filename = 'test_r.txt'
+# with open(filename,'r') as f:
+#     # info = f.read()
+#     # info = f.readline()
+#     # info = f.readlines()
+#     for line in f:
+#         print(line,end='')
+#     f.close()
+# # print(info)
+#
+# filename = 'text_w.txt'
+#
+# with open(filename,'w') as f:
+#     f.write('Hello world!')
+#     f.close()
+
+
+# # 面向对象
+# # 类定义
+# class people:
+#     # 定义基本属性
+#     name = ''
+#     age = 0
+#     # 定义私有属性,私有属性在类外部无法直接进行访问
+#     __weight = 0
+#
+#     # 定义构造方法
+#     def __init__(self, n, a, w):
+#         self.name = n
+#         self.age = a
+#         self.__weight = w
+#
+#     def speak(self):
+#         print("%s 说: 我 %d 岁。" % (self.name, self.age))
+#
+#
+# # 单继承示例
+# class student(people):
+#     grade = ''
+#
+#     def __init__(self, n, a, w, g):
+#         # 调用父类的构函
+#         people.__init__(self, n, a, w)
+#         self.grade = g
+#
+#     # 覆写父类的方法
+#     def speak(self):
+#         print("%s 说: 我 %d 岁了，我在读 %d 年级" % (self.name, self.age, self.grade))
+#
+# # s = student('ken', 10, 60, 3)
+# # s.speak()
+#
+# # 另一个类，多重继承之前的准备
+# class speaker():
+#     topic = ''
+#     name = ''
+#
+#     def __init__(self, n, t):
+#         self.name = n
+#         self.topic = t
+#
+#     def speak(self):
+#         print("我叫 %s，我是一个演说家，我演讲的主题是 %s" % (self.name, self.topic))
+#
+#
+# # 多重继承
+# class sample(speaker, student):
+#     a = ''
+#
+#     def __init__(self, n, a, w, g, t):
+#         student.__init__(self, n, a, w, g)
+#         speaker.__init__(self, n, t)
+#
+#
+# test = sample("Tim", 25, 80, 4, "Python")
+# test.speak()  # 方法名同，默认调用的是在括号中排前地父类的方法
+
+
+# # 方法重写
+# class Parent:  # 定义父类
+#     def myMethod(self):
+#         print('调用父类方法')
+#
+#
+# class Child(Parent):  # 定义子类
+#     def myMethod(self):
+#         print('调用子类方法')
+#
+#
+# c = Child()  # 子类实例
+# c.myMethod()  # 子类调用重写方法
+# super(Child, c).myMethod()  # 用子类对象调用父类已被覆盖的方法
+
+
+# a = [1,2,3,4,5]
+#
+# print(a[:100])
+
+# def f():
+#     pass
+#
+# print(type(f))
+# print(type(f()))
+
+
+# # json
+# import json
+#
+# data1 = {
+#     'no':1,
+#     'name':'Runoob',
+#     'url':'http://www.runoob.com'
+# }
+#
+# json_str = json.dumps(data1)
+# print("Python原始数据： ",repr(data1))
+# print("Json对象： ",json_str)
+#
+# data2 = json.loads(json_str)
+# print ("data2['name']: ",data2['name'])
+# print ("data2['url']: ",data2['url'])
+#
+# # 写入json文件
+# with open("test.json",'w') as f:
+#     json.dump(data1,f)
+#
+# # 读取json文件
+# with open("test.json",'r') as f:
+#     data = json.load(f)
+# print(data)
+
+
+# # 日期与时间
+# # 时间
+# import time
+#
+# ticks = time.time()
+# print("当前时间戳为： ",ticks)
+#
+# localtime = time.localtime(time.time())
+# print("本地时间为： ",localtime)
+#
+# localtime = time.asctime( time.localtime(time.time()) )
+# print ("本地时间为 :", localtime)
+#
+# print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
+#
+# 格式化成Sat Mar 28 22:24:24 2016形式
+# print(time.strftime("%a %b %d %H:%M:%S %Y", time.localtime()))
+#
+# # 将格式字符串转换为时间戳
+# a = "Sat Mar 28 22:24:24 2016"
+# print(time.mktime(time.strptime(a, "%a %b %d %H:%M:%S %Y")))
+#
+# # 日期
+# import calendar
+#
+# cal = calendar.month(2016, 1)
+# print ("以下输出2016年1月份的日历:")
+# print (cal)
+
+
+# a = frozenset(range(10))
+# print(a)
+# print(type(a))
