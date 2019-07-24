@@ -1281,3 +1281,16 @@ import random
 # a = frozenset(range(10))
 # print(a)
 # print(type(a))
+
+
+# print(1,2,3,4,5,6,sep='')
+# print(1,2,3,4,5,6,end='')
+
+# with open('test_r.txt','a') as f:
+#     f.write('\nThis is a new added string.')
+#
+# with open('test_r.txt','r') as f:
+#     s = f.read()
+#     print(s)
+
+
