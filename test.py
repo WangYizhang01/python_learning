@@ -1294,3 +1294,94 @@ import random
 #     print(s)
 
 
+# tf = open('f.txt','rt')
+# print(tf.readline())
+# tf.close()
+#
+# bf = open('f.txt','rb')
+# print(bf.readline())
+# bf.close()
+
+
+# # AutoTraceDraw.py
+# import turtle as t
+#
+# t.title('自动轨迹绘制')
+# t.setup(800, 600, 0, 0)
+# t.pencolor("red")
+# t.pensize(5)
+#
+# # 数据读取
+# datals = []
+# f = open("data.txt")
+# for line in f:
+#     line = line.replace("\n","")
+#     datals.append(list(map(eval, line.split(","))))
+# f.close()
+#
+# # 自动绘制
+# for i in range(len(datals)):
+#     t.pencolor(datals[i][3],datals[i][4],datals[i][5])
+#     t.fd(datals[i][0])
+#     if datals[i][1]:
+#         t.rt(datals[i][2])
+#     else:
+#         t.lt(datals[i][2])
+
+
+# filename = 'country.txt'
+#
+# ls = ["中国","日本","法国","英国","美国"]
+# f = open(filename,'w')
+# f.write(' '.join(ls))
+# f.close()
+#
+# f = open(filename,'r')
+# txt = f.read()
+# lr = txt.split()
+# f.close()
+# print(lr)
+
+
+# filename = "csv_text.csv"
+#
+# ls = [['name','sex','age','weight'],['wang','man',19,65],['zhang','woman',18,50],['anny','woman',20,52]]
+# f = open(filename,'w')
+# for item in ls:
+#     f.write(','.join(list(map(str,item))) + '\n')
+# f.close()
+#
+# f = open(filename)
+# lr = []
+# for line in f:
+#     line = line.replace('\n','')
+#     lr.append(line.split(','))
+# f.close()
+# print(lr)
+
+
+# import wordcloud
+#
+# c = wordcloud.WordCloud()
+# c.generate("wordcloud by Python")
+# c.to_file("pywordcloud.png")
+
+
+# lr = [1,2,3,4,5,'sd',6,67,7]
+# lr.reverse()
+# print(lr)
+#
+# lt = []
+#
+# with open("latex.log", 'r', encoding='utf-8') as f:
+#     for line in f.readlines():
+#         if line.strip():
+#             print(line,end='')
+#             lt.append(len(line))
+#     f.close()
+#
+# re = sum(lt) / len(lt)
+# if re > int(re) + 0.5:
+#     print(int(re) + 1)
+# else:
+#     print(int(re))
