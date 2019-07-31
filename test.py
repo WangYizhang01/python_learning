@@ -532,8 +532,8 @@
 
 
 # random库的使用
-import random
-
+# import random
+#
 # # 基本随机数函数
 # random.seed(10) #设置随机数的种子
 # random.random() #产生0,1之间的随机数
@@ -1385,3 +1385,280 @@ import random
 #     print(int(re) + 1)
 # else:
 #     print(int(re))
+
+
+# n = 1
+# for i in range(5,0,-1):
+#     n = (n+1)<<1 # <<1就是按位左移1个单位
+#     print(n)
+
+# from datetime import datetime # 引用datetime 库
+# now = datetime.now() # 获得当前日期和时间信息
+# print(now)
+# print(now.strftime("%x")) # 输出其中的日期部分
+# print(now.strftime("%X")) # 输出其中的时间部分
+
+# diet = ['西红柿', '花椰菜', '黄瓜', '牛排', '虾仁']
+# for x in range(0, 5):
+#     for y in range(0, 5):
+#         if not(x == y):
+#             print("{},{}".format(diet[x], diet[y]))
+
+# from turtle import *
+#
+# fillcolor("red")
+# begin_fill()
+# while True:
+#     forward(200)
+#     right(144)
+#     if abs(pos()) < 1:
+#         break
+# end_fill()
+
+# #e1.2TempConvert.py
+# TempStr = input("请输入带有符号的温度值: ")
+# while TempStr[-1] not in ['N','n']:
+#     if TempStr[-1] in ['F','f']:
+#         C = (eval(TempStr[0:-1]) - 32)/1.8
+#         print("转换后的温度是{:.2f}C".format(C))
+#     elif TempStr[-1] in ['C','c']:
+#         F = 1.8*eval(TempStr[0:-1]) + 32
+#         print("转换后的温度是{:.2f}F".format(F))
+#     else:
+#         print("输入格式错误")
+#     TempStr = input("请输入带有符号的温度值: ")
+#
+# #e1.2TempConvert2.py
+# while True:
+#     TempStr = input("请输入带有符号的温度值: ")
+#     if TempStr[-1] in ['F','f']:
+#         C = (eval(TempStr[0:-1]) - 32)/1.8
+#         print("转换后的温度是{:.2f}C".format(C))
+#     elif TempStr[-1] in ['C','c']:
+#         F = 1.8*eval(TempStr[0:-1]) + 32
+#         print("转换后的温度是{:.2f}F".format(F))
+#     elif TempStr[-1] in ['N','n']:
+#         break
+#     else:
+#         print("输入格式错误")
+
+# weekstr = "星期一星期二星期三星期四星期五星期六星期日"
+# weekid = eval(input("请输入星期数字(1-7): "))
+# pos = (weekid - 1)*3
+# print(weekstr[pos: pos+3])
+
+# # 凯撒密码
+# plaincode = input("请输入明文: ")
+# for p in plaincode:
+#     if ord("a") <= ord(p) <= ord("z"):
+#         print(chr(ord("a") + (ord(p) - ord("a") + 3)%26),end='')
+#     else:
+#         print(p, end='')
+
+
+# #MatchAnalysis.py
+# from random import random
+#
+# def printIntro():
+#     print("这个程序模拟两个选手A和B的某种竞技比赛")
+#     print("程序运行需要A和B的能力值（以0到1之间的小数表示）")
+#
+# def getInputs():
+#     a = eval(input("请输入选手A的能力值(0-1): "))
+#     b = eval(input("请输入选手B的能力值(0-1): "))
+#     n = eval(input("模拟比赛的场次: "))
+#     return a,b,n
+#
+# def simNGames(n, probA, probB):
+#     winsA, winsB = 0, 0
+#     for i in range(n):
+#         scoreA, scoreB = simOneGame(probA, probB)
+#         if scoreA > scoreB:
+#             winsA += 1
+#         else:
+#             winsB += 1
+#     return winsA, winsB
+#
+# def gameOver(a,b):
+#     return a==15 or b==15
+#
+# def simOneGame(probA, probB):
+#     scoreA,scoreB = 0,0
+#     serving = "A"
+#     while not gameOver(scoreA, scoreB):
+#         if serving == "A":
+#             if random() < probA:
+#                 scoreA += 1
+#             else:
+#                 serving="B"
+#         else:
+#             if random() < probB:
+#                 scoreB += 1
+#             else:
+#                 serving="A"
+#     return scoreA, scoreB
+#
+# def printSummary(winsA, winsB):
+#     n = winsA + winsB
+#     print("竞技分析开始，共模拟{}场比赛".format(n))
+#     print("选手A获胜{}场比赛，占比{:0.1%}".format(winsA, winsA/n))
+#     print("选手B获胜{}场比赛，占比{:0.1%}".format(winsB, winsB/n))
+#
+# def main():
+#     printIntro()
+#     probA,probB,n = getInputs()
+#     winsA,winsB = simNGames(n,probA,probB)
+#     printSummary(winsA, winsB)
+#
+# main()
+
+
+# #BatchInstall.py
+# import os
+#
+# libs = {"numpy","matplotlib","pillow","sklearn","requests",\
+#         "jieba","beautifulsoup4","wheel","networkx","sympy",\
+#         "pyinstaller","django","flask","werobot","pyqt5",\
+#         "pandas","pyopengl","pypdf2","docopt","pygame"}
+# try:
+#     for lib in libs:
+#         os.system("pip3 install "+lib)
+#     print("Successful")
+# except:
+#     print("Failed Somehow")
+
+
+# i = eval(input())
+#
+# try:
+#     # if type(i) == float:
+#     print(i ** 2)
+# except Error:
+#     print("输入错误")
+
+# alpha = []
+# for i in range(26):
+#     alpha.append(chr(ord('a') + i))
+#     alpha.append(chr(ord('A') + i))
+# s = input("请输入: ")
+# for c in s:
+#     if c in alpha:
+#         print(c, end="")
+#
+# s = input("请输入: ")
+# try:
+#     if complex(s) == complex(eval(s)):
+#         print(eval(s)**2)
+# except:
+#     print("输入有误")
+
+
+# import ctypes
+#
+# dl1 = ctypes.cdll.LoadLibrary('./Dll1.dll')
+#
+# print(dl1.add(3,4))
+
+
+# import sys as s,os as o,pprint
+#
+# print(s.argv)
+# print(o.sep)
+# print(s.path)
+# pprint.pprint(s.path)
+# pprint.pprint(dir(s))
+# help(s)
+
+
+# import json
+#
+# print(dir(json))
+# print(json.__all__)
+
+
+# import re
+#
+# print(dir(re))
+# m1 = re.search('abc','www.abcabc.com')
+# print(m1.span())
+# print(m1.group())
+# print(re.match('abc','www.abcabc.com'))
+# m2 = re.findall('abc','www.abcabc.com')
+# print(m2)
+# m3 = re.finditer('abc','www.abcabc.com')
+# print(m3.next())
+
+
+# a = []
+# b = [1,2,3,4,5,6]
+# a.extend(b)
+# print(a)
+
+
+# from collections import deque
+#
+# print([q for q in dir(deque) if not q.startswith("_")])
+# q = deque(('anny','bily'))
+# q.append("candy")
+# q.append('davide')
+# q.pop()
+# q.popleft()
+# print(q)
+
+
+# import numpy as np
+# from sklearn.cluster import KMeans
+#
+# def loadData(filePath):
+#     fr = open(filePath, 'r+')
+#     lines = fr.readlines()
+#     retData = []
+#     retCityName = []
+#     for line in lines:
+#         items = line.strip().split(",")
+#         retCityName.append(items[0])
+#         retData.append([float(items[i]) for i in range(1, len(items))])
+#     return retData, retCityName
+#
+#
+# if __name__ == '__main__':
+#     data, cityName = loadData('city.txt')
+#     km = KMeans(n_clusters=4)
+#     label = km.fit_predict(data)
+#     expenses = np.sum(km.cluster_centers_, axis=1)
+#     # print(expenses)
+#     CityCluster = [[], [], [], []]
+#     for i in range(len(cityName)):
+#         CityCluster[label[i]].append(cityName[i])
+#     for i in range(len(CityCluster)):
+#         print("Expenses:%.2f" % expenses[i])
+#         print(CityCluster[i])
+
+
+# 图书管理员
+# n_q = input()
+# n,q = map(eval, n_q.split(" "))
+# book = [0] * n
+# reader_num = [0]*q
+# num = [0]*q
+# for i in range(n):
+#     book[i] = eval(input())
+# book.sort()
+# for i in range(q):
+#     num_value = input()
+#     num[i],reader_num[i] = map(eval,num_value.split(" "))
+# for i, reader in enumerate(reader_num):
+#     for j, book_num in enumerate(book):
+#         if reader == book_num % (10 ** num[i]):
+#             print(book_num)
+#             break
+#         if j == len(book)-1:
+#             print(-1)
+
+
+# a = [1,2]
+#
+# if a[0] == 1:
+#     print("True_1")
+# elif a[1] == 2:
+#     print("True_2")
