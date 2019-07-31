@@ -55,11 +55,12 @@
 
 # print(list('ABCD'))
 
-# pandas learning
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
 
+# # pandas learning
+# import numpy as np
+# import pandas as pd
+# import matplotlib.pyplot as plt
+#
 # # Series
 # s = pd.Series([1,3,5,np.nan,6,8])
 # print(s)
@@ -88,7 +89,7 @@ import matplotlib.pyplot as plt
 # print(s3[3])
 # s4 = pd.Series([1,3,'cat',7,9])
 # print(s4)
-
+#
 # # Dataframe
 # df1 = pd.DataFrame()
 # print(df1)
@@ -127,5 +128,15 @@ import matplotlib.pyplot as plt
 # print(df9)
 # df9 = df9.drop(0)
 # print(df9)
+#
+# # Panel
+# data1 = np.random.rand(2,4,5)
+# p = pd.Panel(data1)
+# # print(data1)
+# print(p)
+# data2 = {'Item1' : pd.DataFrame(np.random.randn(4, 3)),
+#         'Item2' : pd.DataFrame(np.random.randn(4, 2))}
+# p = pd.Panel(data2)
+# print(p['Item1'])
 
-# Panel
+
