@@ -286,7 +286,253 @@
 #             res.sort()
 #             print(res)
 
-a = [1,2,3,4,5]
-x,y = a[:-1],a[-1]
-print(x)
-print(y)
+# a = [1,2,3,4,5]
+# x,y = a[:-1],a[-1]
+# print(x)
+# print(y)
+
+# def tribonacci(n):
+#     res = []
+#     while len(res) <= n:
+#         if len(res) < 2:
+#             res.append(len(res))
+#             continue
+#         res.append(sum(res[-3:]))
+#     return max(res)
+#
+# print(tribonacci(4))
+
+# res = [1,2]
+# print(sum(res[-6:]))
+
+# print('110101001'.count('1'))
+# print(bin(23)[2:].count('1'))
+
+# import pprint
+# print('fsatdg'[0])
+# print(len('yhxay'))
+# dp = [[None for _ in range(8)] for _ in range(10)]
+# pprint.pprint(dp)
+
+# import numpy as np
+#
+# list1 = np.array([1,2]);list2 = np.array([2,3])
+# print(sum(np.square(list1,list2)))
+# print('ATGhda'.lower())
+#
+# s = 'abcdefghijk'
+# s1 = s[::-1]
+# print(s,s1)
+
+
+# def isPalindrome(s):
+#     if not s:
+#         return True
+#     s = s.lower()
+#     s = s.replace(' ', '')
+#     for i in s:
+#         if i in ",:":
+#             s = s.replace(i, '')
+#     s1 = s[::-1]
+#     if s == s1:
+#         return True
+#     return False
+#
+# print(isPalindrome("A man, a plan, a canal: Panama"))
+
+
+# a = filter(str.isalnum,'tgdy131')
+# print(a)
+
+# n = bin(6)[2:]
+# m = n.split('1')
+# print(n)
+# print(m)
+# print(n.index('1'))
+
+# def binaryGap(N):
+#     string = bin(N)[2:].split('1')[1-1]
+#     max = -1
+#     for i in string:
+#         if len(i) > max:
+#             max = len(i)
+#     return max+1
+#
+# print(binaryGap(41))
+
+# a = [1,2,3,4,5,6,7,8,9,0]
+# b = a[:5]
+# print(b)
+
+# def binaryGap(N):
+#     str1 = bin(N)[2:].split('1')
+#     string = str1[1:-1]
+#     max = -1
+#     for i in string:
+#         if len(i) > max:
+#             max = len(i)
+#     return max + 1
+#
+# print(binaryGap(41))
+
+# a = [1,2,3,4,1,6,2]
+# b = set(a)
+# print(a)
+# print(b)
+
+# def hanoi(n,x,y,z):
+#     if n == 1:
+#         print(x,'--->',z)
+#     else:
+#         hanoi(n-1,x,z,y)
+#         print(x,'--->',z)
+#         hanoi(n-1,y,x,z)
+#
+# while True:
+#     n = int(input("请输入汉诺塔的层数： "))
+#     hanoi(n,'x','y','z')
+
+# print(1==1==2)
+
+# x = [1,2,3,4,1,5,6,7,8]
+# print(x.index(1))
+# x.remove(1)
+# print(x.index(1))
+
+# def missingNumber(nums):
+#     nums.sort()
+#     n = len(nums)
+#
+#     if nums == [0]:
+#         return 1
+#     elif nums == [1]:
+#         return 0
+#
+#     for i in range(n - 1):
+#         while i <= n-2:
+#             if nums[i + 1] != nums[i] + 1:
+#                 return nums[i] + 1
+#                 break
+#         else:
+#             return n
+#
+# print(missingNumber([3,0,1]))
+
+
+# def hammingWeight(n):
+#     n = str(n)
+#     count = 0
+#     for i in n:
+#         if i == '1':
+#             count += 1
+#     return count
+#
+# def hammingWeight2(n):
+#     n = str(n)
+#     return n.count('1')
+#
+# print(hammingWeight('00000000000000000000000000001011'))
+# print(hammingWeight2('00000000000000000000000000001011'))
+
+
+# def rob(nums):
+#     n = len(nums)
+#     sum1, sum2 = 0, 0
+#     if n % 2 == 0:
+#         for i in range(n/2):
+#             sum1 += nums[2*i+1]
+#             sum2 = sum(nums) - sum1
+#             return sum1 if sum1 >= sum2 else
+#             return sum2
+#         else:
+#             for i in range((n+1)/2):
+#                 sum1 += nums[2i+1]
+#                 sum2 = sum(nums) - sum1
+#                 return sum1 if sum1 >= sum2 else
+#                 return sum2
+
+
+# a = [1,1,2,3,4,4,5]
+# b = set(a)
+#
+# print(a)
+# print(b)
+
+
+# def hasGroupsSizeX(deck):
+#     a = set(deck)
+#     b = []
+#     for i in a:
+#         b.append(deck.count(i))
+#     if len(b) == 1:
+#         return True
+#     for i in range(len(b) - 1):
+#         for j in range(i + 1, len(b)):
+#             if b[i] % b[j] != 0:
+#                 return False
+#     return True
+#
+# print(hasGroupsSizeX([1]))
+
+# import numpy as np
+#
+# print(np.square(4))
+
+# from collections import Counter
+# c = 'acascse'
+# a = Counter(c)
+# print(a)
+# print(type(a))
+
+# digits = [1,2,3]
+# digits = list(map(str,digits))
+# a = ''.join(digits)
+# print(a)
+# print(type(a))
+
+# nums = [1,5,3,4,7,6]
+#
+# num = sorted(nums)
+# print(num)
+
+
+# def movesToMakeZigzag(nums):
+#     count1 = 0;count2 = 0;count3 = 0;count4 = 0
+#     n = len(nums)
+#     if n >= 2:
+#         if n % 2 == 0:
+#             for i in range(1, int(n / 2)):
+#                 if nums[2 * i] > nums[2 * i - 1] or nums[2 * i] > nums[2 * i + 1]:
+#                     nums[2 * i] -= 1
+#                     count1 += 1
+#                 if nums[0] > nums[1]:
+#                     nums[0] -= 1
+#                     count1 += 1
+#             for i in range(int(n / 2) - 1):
+#                 if nums[2 * i + 1] > nums[2 * i] or nums[2 * i + 1] > nums[2 * i + 2]:
+#                     nums[2 * i + 1] -= 1
+#                     count2 += 1
+#                 if nums[n - 1] > nums[n - 2]:
+#                     nums[n - 1] -= 1
+#                     count2 += 1
+#             return max(count1, count2)
+#         else:
+#             for i in range(1, int((n + 1) / 2) - 1):
+#                 if nums[2 * i] > nums[2 * i - 1] or nums[2 * i] > nums[2 * i + 1]:
+#                     nums[2 * i] -= 1
+#                     count3 += 1
+#                 if nums[0] > nums[1]:
+#                     nums[0] -= 1
+#                     count3 += 1
+#                 if nums[n - 1] > nums[n - 2]:
+#                     nums[n - 1] -= 1
+#                     count3 += 1
+#             for i in range(int((n + 1) / 2) - 1):
+#                 if nums[2 * i + 1] > nums[2 * i] or nums[2 * i + 1] > nums[2 * i + 2]:
+#                     nums[2 * i + 1] -= 1
+#                     count4 += 1
+#             return max(count3, count4)
+#     else:
+#         return 1
+
+
