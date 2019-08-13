@@ -536,3 +536,86 @@
 #         return 1
 
 
+# dict = {'a':1,'b':2,'c':3,'d':4,'e':5}
+
+# for i in dict.keys():
+#     if i == 'b':
+#         print(dict[i])
+# else:
+#     print(-1)
+#
+# print('a' in dict.keys())
+
+# print(ord('a'))
+# print(ord("A"))
+# print(chr(122))
+
+# def toLowerCase(str):
+#     # return str.lower()
+#     for i in str:
+#         if ord(i) in list(range(65, 91)):
+#             i = chr(ord(i) + 32)
+#     return str
+#
+# print(toLowerCase('Hello'))
+
+# data = [1,2,3,4,5,6,7,8,9,0]
+#
+# for i in data:
+#     i = -1
+# print(data)
+#
+# print(len('abcd'))
+
+# def findLHS(nums):
+#     from collections import Counter
+#     a = Counter(nums)
+#     b = sorted(a)
+#     m = 0
+#     for i in range(len(b) - 1):
+#         j = b[i + 1]
+#         k = b[i]
+#         if j - k == 1:
+#             m = max(m, a[j] + a[k])
+#     return m
+
+# print('abcdefg'.reverse())
+
+# s = [0,1,2,3,4,5,6,7,8]
+# print(s[1:4])
+# print(s[4:1:-1])
+
+# def dayOfYear(date):
+#     date = list(map(int,date.split('-')))
+#     res = 0
+#     for i in range(1, date[1]):
+#         if i in [1, 3, 5, 7, 8, 10, 12]:
+#             res += 31
+#         elif i in [4, 6, 9, 11]:
+#             res += 30
+#         elif date[0] % 4 == 0:
+#             res += 28
+#         else:
+#             res += 29
+#     res += date[2]
+#     return res
+#
+# print(dayOfYear('2003-03-01'))
+
+# print(str(100)[1])
+
+# def relativeSortArray(arr1,arr2):
+#     arr = []
+#     array = []
+#     for i in arr2:
+#         count = arr1.count(i)
+#         arr.extend([i] * count)
+#     for j in arr1:
+#         if j not in arr2:
+#             array.append(j)
+#     array.sort()
+#     arr.extend(array)
+#     return arr
+#
+# print(relativeSortArray([2,3,1,3,2,4,6,7,9,2,19],[2,1,4,3,9,6]))
+

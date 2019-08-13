@@ -58,3 +58,11 @@ y_test = np.array(y[num_training:])
 # 多项式回归
 polynomial = PolynomialFeatures(degree=3)
 
+x_train_transformed = polynomial.fit_transform(x_train)
+datapoint = [0.39,2.78,7.11]
+poly_datapoint = polynomial.fit_transform(datapoint)
+
+poly_linear_model = linear_model.LinearRegression()
+poly_linear_model.fit(x_train_transformed,y_train)
+print("\nLinear regression: ",linear_regressor.predict(datapoint)[0])
+print("\nPolynomial regression:", poly_linear_model.predict(poly_datapoint)[0])
