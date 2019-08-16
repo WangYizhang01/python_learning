@@ -619,3 +619,224 @@
 #
 # print(relativeSortArray([2,3,1,3,2,4,6,7,9,2,19],[2,1,4,3,9,6]))
 
+# filename = 'test_r.txt'
+#
+# with open(filename,'r') as f:
+#     cotents = f.readlines()
+#
+# a = ''
+# for line in cotents:
+#     a += (line.strip() + ' ')
+#
+# print(a)
+
+# import json
+#
+# numbers = [1,2,3,4,5,6,7,8,9]
+#
+# filename = 'test_0813.json'
+# with open(filename,'w') as f:
+#     json.dump(numbers,f)
+#
+# with open(filename,'r') as f:
+#     res = json.load(f)
+# print(res)
+
+# S = 'abbaca'
+# S = S.replace(S[2],'')
+# print(S)
+
+# arr = [4,2,7,4,7,8,9,6,5,7]
+# for i,num in enumerate(arr):
+#     print(i,num)
+
+
+# # 1.29
+# from itertools import permutations
+#
+# res = []
+# s = ['c','a','t','d','o','g']
+# num = list(range(6))
+# pailie = list(permutations(num))
+# # print(len(pailie))
+# # print(type(pailie[1]))
+#
+# for i in range(len(pailie)):
+#     a = ''
+#     for j in range(6):
+#         a += s[pailie[i][j]]
+#     res.append(a)
+#
+# print(res)
+
+# def function29():
+#     temp = ['c', 'a', 't', 'd', 'o', 'g']
+#     from itertools import permutations
+#     print(list(map(''.join, permutations(temp))))
+#
+# function29()
+
+# # 1.30
+# n = eval(input("Pls enter a number: "))
+# if n <= 2:
+#     print("The number is too small!")
+# count = 0
+# while n > 2:
+#     n //=2
+#     count += 1
+# print(count)
+
+# # 1.31
+# n,m = list(map(eval,input("pls enter the number n,m: ").split(',')))
+# if n > m:
+#     print("The money is not enogh!")
+# elif n == m:
+#     print("Over!")
+# else:
+#     k = m - n # 假定k小于100，且货币有50,20,10,5,1
+#     if k >= 50:
+#         print("one 50.")
+#         k -= 50
+#     elif k >= 40:
+#         print("two 20.")
+#         k -= 40
+#     elif k >= 20:
+#         print("one 20.")
+#         k -= 20
+#     elif k >= 10:
+#         print("one 10.")
+#         k -= 10
+#     elif k >= 5:
+#         print("one 5.")
+#         k -= 5
+#     else:
+#         print(str(k)+" 1.")
+
+# def function31():
+#     coins = {'0.5': 0, '1': 0, '5': 0, '10': 0, '20': 0, '50': 0, '100': 0}
+#     temp = input("Please input Pay and Total money: \n").split(" ")
+#     pay, total = int(temp[0]), int(temp[1])
+#     rest = total - pay
+#
+#     coins[100] = int(rest / 100)
+#     rest = int(rest % 100)
+#     coins[50] = int(rest / 50)
+#     rest = int(rest % 50)
+#     coins[20] = int(rest / 20)
+#     rest = int(rest % 20)
+#     coins[10] = int(rest / 10)
+#     rest = int(rest % 10)
+#     coins[5] = int(rest / 5)
+#     rest = int(rest % 5)
+#     coins[1] = int(rest / 1)
+#     rest = int(rest % 1)
+#     coins[0.5] = int(rest / 0.5)
+#     rest = int(rest % 0.5)
+#
+#     return coins.values()
+#
+# print(function31())
+
+# # 1.32
+# def function32():
+#     temp = input("Please input Number1 Operation Number2: \n").split(" ")
+#     num1 = int(temp[0])
+#     num2 = int(temp[2])
+#     oper = str(temp[1])
+#     if oper == '+':
+#         result = num1 + num2
+#     elif oper == '-':
+#         result = num1 - num2
+#     elif oper == '*':
+#         result = num1 * num2
+#     elif oper == '/':
+#         result = num1 / num2
+#     else:
+#         raise EOFError("Error Input!")
+#     return result
+#
+# print(function32())
+
+# # 1.36
+# shuru = input("pls enter the words list: ").split(' ')
+# shuchu = []
+# for i in range(len(shuru)):
+#     shuchu.append(shuru.count(shuru[i]))
+# print(shuchu)
+
+
+# # 冒泡排序
+# def maopao(array):
+#     if len(array) == 0:
+#         return array
+#     for i in range(len(array)):
+#         for j in range(len(array)-1-i):
+#             if array[j] > array[j+1]:
+#                 array[j],array[j+1] = array[j+1],array[j]
+#     return array
+#
+# def maopao2(array):
+#     if len(array) < 2:
+#         return array
+#     for i in range(len(array)-1):
+#         if array[i] > array[i+1]:
+#             array[i], array[i+1] = array[i+1], array[i]
+#     return maopao2(array[:-1]) + list(array[-1])
+#
+# array = [2,7,5,9,3,6,7,4]
+# print(maopao2(array))
+
+# # 选择排序
+# b = []
+#
+# def xuanze(array):
+#     if len(array) < 2:
+#         return b
+#     global b
+#     min = 10
+#     for i in range(len(array)):
+#         if array[i] < min:
+#             min = array[i]
+#     array.remove(min)
+#     b.append(min)
+#     return xuanze(array)
+
+# def xuanze2(array):
+#     b = []
+#     min = 10
+#     while len(array) > 2:
+#         for i in range(len(array)):
+#             if array[i] < min:
+#                 min = array[i]
+#         del array[i]
+#         b.append(min)
+#     b = b + array
+#     return b
+
+# def xuanze3(array):
+#     # if len(array) == 1:
+#     #     return array
+#     for i in range(len(array)):
+#         min = i
+#         for j in range(i,len(array)):
+#             if array[j] < array[min]:
+#                 min = j
+#         array[i],array[min] = array[min],array[i]
+#     return array
+#
+# array = [6]
+# # array = [2,7,5,9,3,6,7,4]
+# print(xuanze3(array))
+
+# # 插入排序
+# def charu(array):
+#     if len(array) == 1:
+#         return array
+#     for i in range(1,len(array)):
+#         for j in range(0,i):
+#             if array[i-j-1] > array[i-j]:
+#                 array[i-j],array[i-j-1] = array[i-j-1],array[i-j]
+#     return array
+#
+# array = [2,7,5,9,3,6,7,4]
+# print(charu(array))

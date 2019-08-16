@@ -1662,3 +1662,46 @@
 #     print("True_1")
 # elif a[1] == 2:
 #     print("True_2")
+
+# # 链表的实现
+# class SingleNode():
+#     def __init__(self,elem,next):
+#         self.elem = elem
+#         self.next = next
+#
+# class SingleLinkList():
+#     def __init__(self):
+#         self.head = None
+#
+#     def is_empty(self):
+#         return self.head == None
+
+
+# # 冒泡排序
+# def paixu(array):
+#     for i in range(len(array)):
+#         for j in range(len(array)-i-1):
+#             if array[j][0] > array[j+1][0]:
+#                 array[j],array[j+1] = array[j+1],array[j]
+#             elif array[j][0] == array[j+1][0]:
+#                 if array[j][1] > array[j+1][1]:
+#                     array[j],array[j+1] = array[j+1],array[j]
+#     return array
+#
+# array = [(4,1),(3,1),(3,7),(5,6),(5,5),(2,5)]
+# print(paixu(array))
+
+# print(list(range(5,1,-1)))
+# a = [4,6,3,6,7,9,6,4,6,8,5,3,8]
+# print(a[7:2:-1])
+
+# def maopao(arr):
+#     for i in range(len(arr)-1,0,-1):
+#         for j in range(i):
+#             if arr[j] > arr[j+1]:
+#                 arr[j],arr[j+1] = arr[j+1],arr[j]
+#     return arr
+#
+# arr = [4]
+# # arr = [2,3,6,8,4,7,9,4,1]
+# print(maopao(arr))
