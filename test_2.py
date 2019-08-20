@@ -840,3 +840,40 @@
 #
 # array = [2,7,5,9,3,6,7,4]
 # print(charu(array))
+
+# print(int('-1'))
+
+# def reverse(x):
+#     x = str(x)
+#     if x[0] == '-':
+#         x = x[1::-1]
+#         x = '-' + x
+#     else:
+#         x = x[::-1]
+#     return x
+#
+# print(reverse(-123))
+
+# x = '-123'
+# n = len(x)
+# x = x[n:0:-1]
+# print(x)
+
+# print(2**31)
+
+# print(2==2==2)
+
+# s = ["flower","flow","flight"]
+# print(min(s))
+# print(max(s))
+# print("flower" > "flight")
+
+# print(list(zip(s)))
+# print(list(zip(*s)))
+# ss = list(map(set, zip(*s)))
+# print(ss)
+
+# N = 10
+# for i in range(N, 1, -1):
+#     print(i)
+
